@@ -12,9 +12,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        container.layer.cornerRadius = 20
+        forcast.layer.cornerRadius = 20
+
     }
 
 
+    @IBOutlet weak var container: UIView!
+
+    @IBOutlet weak var forcast: UIView!
 }
 
