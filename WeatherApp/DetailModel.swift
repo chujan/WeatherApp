@@ -7,35 +7,38 @@
 //
 
 import Foundation
+import UIKit
 
 struct DetailModel {
     let conditonId: Int
-    let cityName: String
-    let temperature: Double
+    let current: Current
+    let minutely: [Minutely]
+    let hourly: [Current]
+    let daily: [Daily]
     
     
-    var temperatureString: String {
-        return String(format: "%.1f", temperature)
+    func temperture(tempretureString: Double) -> String {
+        return String(format: "%.1f", tempretureString)
     }
     
-    var conditionName: String {
-      switch conditonId {
-        case  200...232:
-            return "bolt"
-        case 300...321:
-            return "drizzle"
-        case 500...531:
-            return "rain"
-        case 600...622:
-            return "snow"
-        case 701...781:
-            return "fog"
-        case 800:
-            return "max"
-        case 801...804:
-            return "bolt"
-        default:
-         return "cloud"
-        }
+        func getConditionName(conditionId: Int) -> UIImage {
+        switch conditonId {
+          case  200...232:
+              return #imageLiteral(resourceName: "Vector 8")
+          case 300...321:
+              return #imageLiteral(resourceName: "Group 679")
+          case 500...531:
+              return #imageLiteral(resourceName: "Group 650")
+          case 600...622:
+              return #imageLiteral(resourceName: "Union")
+          case 701...781:
+              return #imageLiteral(resourceName: "sunny")
+          case 800:
+              return #imageLiteral(resourceName: "Group 679")
+          case 801...804:
+              return #imageLiteral(resourceName: "Vector 7")
+          default:
+           return #imageLiteral(resourceName: "Union")
+          }
     }
 }
